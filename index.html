@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Guinda Smash 3ra edición: inscripción oficial en start.gg y acceso a la comunidad de WhatsApp." />
+    <meta name="description" content="La nueva edición del torneo guinda smash del cecyt 13!" />
     <meta name="theme-color" content="#3f0d1d" />
-    <title>Guinda Smash 3ra edición | Enlaces oficiales</title>
+    <title>New Guinda Smash (3ra Edición)</title>
     <style>
       :root {
         color-scheme: dark;
@@ -46,10 +46,9 @@
         position: fixed;
         inset: 0;
         z-index: -2;
-        /* Imagen de fondo local esperada: assets/guinda-bg.jpg */
         background-image: url("assets/guinda-bg.jpg");
         background-size: cover;
-        background-position: center;
+        background-position: center center;
         background-repeat: no-repeat;
       }
 
@@ -67,23 +66,14 @@
 
       .hero {
         border: 1px solid var(--borde);
-        border-radius: 18px;
+        border-radius: 0;
         background: var(--panel);
         box-shadow: 0 20px 45px #00000073;
         padding: clamp(1.5rem, 3.2vw, 2.75rem);
       }
 
-      .eyebrow {
-        margin: 0;
-        font-family: "Segoe UI", system-ui, sans-serif;
-        font-size: 0.78rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--marfil-suave);
-      }
-
       h1 {
-        margin: 0.55rem 0 0;
+        margin: 0;
         font-size: clamp(2rem, 6vw, 3.2rem);
         line-height: 1.1;
       }
@@ -100,31 +90,20 @@
       .actions {
         margin-top: 1.75rem;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 0.85rem;
       }
 
       .cta {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.22rem;
-        border-radius: 12px;
+        display: block;
+        border-radius: 0;
         padding: 0.95rem 1rem;
         text-decoration: none;
         font-family: "Segoe UI", system-ui, sans-serif;
         line-height: 1.35;
+        font-size: 1rem;
         border: 1px solid transparent;
         transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-      }
-
-      .cta strong {
-        font-size: 1rem;
-      }
-
-      .cta small {
-        font-size: 0.86rem;
-        opacity: 0.94;
       }
 
       .cta-primary {
@@ -158,12 +137,12 @@
       }
 
       @media (max-width: 520px) {
-        .hero {
-          border-radius: 14px;
-        }
-
         .actions {
           grid-template-columns: 1fr;
+        }
+
+        body::before {
+          background-position: center top;
         }
       }
     </style>
@@ -171,20 +150,15 @@
   <body>
     <main>
       <article class="hero" aria-labelledby="titulo-evento">
-        <p class="eyebrow">Guinda Smash · 3ra edición</p>
-        <h1 id="titulo-evento">Guinda Smash</h1>
-        <p class="subtitle">
-          Encuentra aquí los enlaces oficiales del evento: registro del torneo y acceso directo a la comunidad para resolver dudas y coordinar tu participación.
-        </p>
+        <h1 id="titulo-evento">New Guinda Smash (3ra Edición)</h1>
+        <p class="subtitle">La nueva edición del torneo guinda smash del cecyt 13!</p>
 
         <nav class="actions" aria-label="Enlaces oficiales del evento">
           <a class="cta cta-primary" href="https://www.start.gg/tournament/new-guinda-smash-3ra-edici-n-1/details" target="_blank" rel="noopener noreferrer">
-            <strong>Inscribirme en start.gg</strong>
-            <small>Registro oficial del torneo</small>
+            Inscripción
           </a>
           <a class="cta cta-secondary" href="https://chat.whatsapp.com/HMRJ8bpcsVL492NW7xqJMW" target="_blank" rel="noopener noreferrer">
-            <strong>Unirme al WhatsApp</strong>
-            <small>Comunidad, avisos y consultas</small>
+            grupo de whatsapp
           </a>
         </nav>
       </article>
