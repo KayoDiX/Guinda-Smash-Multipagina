@@ -3,109 +3,191 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guinda Smash | Enlaces</title>
+    <meta name="description" content="Guinda Smash 3ra edición: inscripción oficial en start.gg y acceso a la comunidad de WhatsApp." />
+    <meta name="theme-color" content="#3f0d1d" />
+    <title>Guinda Smash 3ra edición | Enlaces oficiales</title>
     <style>
       :root {
         color-scheme: dark;
-        --bg-1: #1a0a2e;
-        --bg-2: #2d1047;
-        --card: #ffffff14;
-        --text: #f8f5ff;
-        --accent: #ff4fa3;
-        --accent-2: #ff8a00;
+        --vino-950: #22070f;
+        --vino-900: #2f0a16;
+        --vino-700: #571628;
+        --marfil: #f8f1e8;
+        --marfil-suave: #dbcdbf;
+        --borde: #e6d2bb40;
+        --panel: #1f0b11cc;
+        --focus: #f9cd85;
       }
 
       * {
         box-sizing: border-box;
       }
 
+      html,
       body {
         margin: 0;
+        min-height: 100%;
+      }
+
+      body {
         min-height: 100vh;
+        font-family: "Georgia", "Times New Roman", serif;
+        color: var(--marfil);
+        background-color: var(--vino-900);
         display: grid;
         place-items: center;
-        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-        background: radial-gradient(circle at top, var(--bg-2), var(--bg-1));
-        color: var(--text);
-        padding: 24px;
+        padding: clamp(1rem, 2.5vw, 2rem);
+        position: relative;
+        isolation: isolate;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        /* Imagen de fondo local esperada: assets/guinda-bg.jpg */
+        background-image: url("assets/guinda-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(180deg, #22070fd9 0%, #2f0a16e6 45%, #16060ccf 100%);
       }
 
       main {
-        width: min(720px, 100%);
-        background: var(--card);
-        border: 1px solid #ffffff2a;
-        border-radius: 22px;
-        padding: 36px 28px;
-        text-align: center;
-        backdrop-filter: blur(4px);
-        box-shadow: 0 20px 40px #00000045;
+        width: min(760px, 100%);
+      }
+
+      .hero {
+        border: 1px solid var(--borde);
+        border-radius: 18px;
+        background: var(--panel);
+        box-shadow: 0 20px 45px #00000073;
+        padding: clamp(1.5rem, 3.2vw, 2.75rem);
+      }
+
+      .eyebrow {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        font-size: 0.78rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--marfil-suave);
       }
 
       h1 {
-        margin: 0;
-        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        margin: 0.55rem 0 0;
+        font-size: clamp(2rem, 6vw, 3.2rem);
+        line-height: 1.1;
       }
 
-      p {
-        margin: 14px auto 0;
-        max-width: 52ch;
-        line-height: 1.55;
-        opacity: 0.9;
+      .subtitle {
+        margin: 1rem 0 0;
+        max-width: 58ch;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        font-size: clamp(1rem, 2.35vw, 1.1rem);
+        line-height: 1.65;
+        color: #efe3d5;
       }
 
-      .links {
-        margin-top: 30px;
+      .actions {
+        margin-top: 1.75rem;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.85rem;
       }
 
-      a {
+      .cta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.22rem;
+        border-radius: 12px;
+        padding: 0.95rem 1rem;
         text-decoration: none;
-        color: var(--text);
-        border: 1px solid #ffffff3a;
-        border-radius: 14px;
-        padding: 18px 14px;
-        font-weight: 700;
-        transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        line-height: 1.35;
+        border: 1px solid transparent;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       }
 
-      a:first-child {
-        background: linear-gradient(120deg, #7b2cff, var(--accent));
-        border-color: #ffffff57;
+      .cta strong {
+        font-size: 1rem;
       }
 
-      a:last-child {
-        background: linear-gradient(120deg, #ff6b00, var(--accent-2));
-        border-color: #ffffff57;
+      .cta small {
+        font-size: 0.86rem;
+        opacity: 0.94;
       }
 
-      a:hover,
-      a:focus-visible {
-        transform: translateY(-3px);
-        border-color: #fff;
+      .cta-primary {
+        background: #f2dcc1;
+        color: #3e0f1d;
+        border-color: #f6e6d2;
       }
 
-      .note {
-        margin-top: 18px;
-        font-size: 0.9rem;
-        opacity: 0.72;
+      .cta-secondary {
+        color: var(--marfil);
+        background: transparent;
+        border-color: #f1dfc680;
+      }
+
+      .cta:hover {
+        transform: translateY(-1px);
+      }
+
+      .cta-primary:hover {
+        box-shadow: 0 12px 22px #0000004d;
+      }
+
+      .cta-secondary:hover {
+        border-color: #f5e6d4;
+        background: #f4e7d414;
+      }
+
+      .cta:focus-visible {
+        outline: 3px solid var(--focus);
+        outline-offset: 2px;
+      }
+
+      @media (max-width: 520px) {
+        .hero {
+          border-radius: 14px;
+        }
+
+        .actions {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
   <body>
     <main>
-      <h1>Guinda Smash</h1>
-      <p>
-        Escaneaste un solo QR con dos destinos. Elige si quieres entrar al torneo en start.gg o unirte a la comunidad de WhatsApp para resolver dudas.
-      </p>
+      <article class="hero" aria-labelledby="titulo-evento">
+        <p class="eyebrow">Guinda Smash · 3ra edición</p>
+        <h1 id="titulo-evento">Guinda Smash</h1>
+        <p class="subtitle">
+          Encuentra aquí los enlaces oficiales del evento: registro del torneo y acceso directo a la comunidad para resolver dudas y coordinar tu participación.
+        </p>
 
-      <section class="links" aria-label="Enlaces principales">
-        <a href="https://www.start.gg/" target="_blank" rel="noopener noreferrer">Ver torneo en start.gg</a>
-        <a href="https://chat.whatsapp.com/" target="_blank" rel="noopener noreferrer">Entrar a la comunidad de WhatsApp</a>
-      </section>
-
-      <p class="note">Puedes reemplazar ambos enlaces por los oficiales cuando los tengas.</p>
+        <nav class="actions" aria-label="Enlaces oficiales del evento">
+          <a class="cta cta-primary" href="https://www.start.gg/tournament/new-guinda-smash-3ra-edici-n-1/details" target="_blank" rel="noopener noreferrer">
+            <strong>Inscribirme en start.gg</strong>
+            <small>Registro oficial del torneo</small>
+          </a>
+          <a class="cta cta-secondary" href="https://chat.whatsapp.com/HMRJ8bpcsVL492NW7xqJMW" target="_blank" rel="noopener noreferrer">
+            <strong>Unirme al WhatsApp</strong>
+            <small>Comunidad, avisos y consultas</small>
+          </a>
+        </nav>
+      </article>
     </main>
   </body>
 </html>
